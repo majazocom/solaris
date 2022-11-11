@@ -4,14 +4,20 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
+header {
+    background-color: black;
+    color: white;
+}
+
+header h1 {
+    margin-block-start: 0;
+    padding-top: 0.83em;
+}
+
 header .header-section {
     padding: 0 1.2rem;
 }
 
-header nav {
-    background-color: black;
-    color: white;
-}
 
 header nav ul {
     display: flex;
@@ -20,6 +26,13 @@ header nav ul {
     justify-content: end;
     padding-inline-start: 0;
     margin-block-end: 0;
+}
+
+header #search-input {
+    border-radius: 12px;
+    border-color: transparent;
+    height: 2rem;
+    margin-right: 2rem;
 }
 
 main {
