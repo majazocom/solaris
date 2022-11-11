@@ -1,7 +1,7 @@
 // hårdkodad nyckel -> solaris-KwOi5vm2TYNmi8Dd
 
 // initialt kalla på funktionen som hämtar från api'et
-fetchSolarSystem();
+renderPlanets();
 
 // hämtar all data från api'et
 async function fetchSolarSystem() {
@@ -10,22 +10,23 @@ async function fetchSolarSystem() {
         headers: { 'x-zocom': 'solaris-7BTxHCyHhzIME5TI' }
     }).then(data => data.json());
     console.log(await resp);
-    renderPlanets(resp.bodies);
+    return await resp.bodies;
 };
 
 // tar all data från api'et och skapar nya element där varje planet kan ligga i
-function renderPlanets(planets) {
+async function renderPlanets() {
+    const bodies = await fetchSolarSystem();
     const planetsContainer = document.querySelector('.inner-module');
-    planets.forEach(planet => {
+    bodies.forEach(body => {
         // skapar elementet, men lägger inte in den ännu
         let img = document.createElement('img');
-        img.setAttribute('src', `../assets/${planet.id}.svg`);
-        if (planet.id !== 0) { img.setAttribute('class', 'body planet'); } else { img.setAttribute('class', 'body sun'); }
+        img.setAttribute('src', `../assets/${body.id}.svg`);
+        if (body.id !== 0) { img.setAttribute('class', 'body planet'); } else { img.setAttribute('class', 'body sun'); }
         // sätter unikt id efter planetens eget id
-        img.setAttribute('id', planet.id);
+        img.setAttribute('id', body.id);
 
         // sätta en eventlyssnare på varje planets bild
-        img.addEventListener('click', () => goToPlanet(planet));
+        img.addEventListener('click', () => goToPlanet(body));
 
         // lägger in det nya elementet på sidan
         planetsContainer.appendChild(img);
@@ -38,8 +39,24 @@ function renderPlanets(planets) {
     });
 }
 
-function goToPlanet(planet) {
-    console.log(planet);
-    localStorage.setItem('planet', JSON.stringify(planet));
+function goToPlanet(body) {
+    console.log(body);
+    localStorage.setItem('body', JSON.stringify(body));
     location.href = "bodypage.html";
 }
+
+// sökfunktionen
+document.querySelector('#search-input').addEventListener('keyup', async function (event) {
+    if (event.key === "Enter") {
+        searchTerm = document.querySelector('#search-input').value.toLowerCase();
+        let bodies = await fetchSolarSystem();
+        bodies.forEach(body => {
+            let latinName = body.latinName.toLowerCase();
+            let name = body.name.toLowerCase();
+            if (name.includes(searchTerm) || latinName.includes(searchTerm)) {
+                window.localStorage.setItem('body', JSON.stringify(body));
+                window.location.href = "bodypage.html";
+            }
+        });
+    }
+});
