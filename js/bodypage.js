@@ -12,27 +12,27 @@ function toggleBody(direction) {
     let currentBodyID = body.id;
     if (direction === 'previous') {
         // gå till planeten innan i solsystemet
-        let previousBody;
-        if (currentBodyID === 1) {
-            // om id är 1 så är det solen och då finns det ingen innan den
+        let previousBodyID;
+        if (currentBodyID === 0) {
+            // om id är 0 så är det solen och då finns det ingen innan den
             // då får planeten innan bli den sista i solsystemet istället
-            previousBody = bodies.length;
+            previousBodyID = bodies.length - 1;
         } else {
-            previousBody = currentBodyID - 1;
+            previousBodyID = currentBodyID - 1;
         }
-        localStorage.setItem('body', JSON.stringify(bodies[previousBody]));
+        localStorage.setItem('body', JSON.stringify(bodies[previousBodyID]));
         location.reload();
     } else {
         // gå till nästa planet i solsystemet
-        let nextBody;
-        if (currentBodyID === bodies.length) {
+        let nextBodyID;
+        if (currentBodyID === bodies.length - 1) {
             // om det är sista planeten i solsystemet
             // skall vi gå till första istället AKA solen
-            nextBody = 0;
+            nextBodyID = 0;
         } else {
-            nextBody = currentBodyID + 1;
+            nextBodyID = currentBodyID + 1;
         }
-        localStorage.setItem('body', JSON.stringify(bodies[nextBody]));
+        localStorage.setItem('body', JSON.stringify(bodies[nextBodyID]));
         location.reload();
     }
 }
