@@ -16,6 +16,8 @@ async function fetchSolarSystem() {
 // tar all data från api'et och skapar nya element där varje planet kan ligga i
 async function renderPlanets() {
     const bodies = await fetchSolarSystem();
+    // lägga in alla himlakroppar i localhost
+    localStorage.setItem('bodies', JSON.stringify(bodies));
     const planetsContainer = document.querySelector('.inner-module');
     bodies.forEach(body => {
         // skapar elementet, men lägger inte in den ännu
