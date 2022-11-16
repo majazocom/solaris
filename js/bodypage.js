@@ -8,7 +8,6 @@ document.querySelector('#body-latin-name').innerHTML = body.latinName;
 document.querySelector('#body-description').innerHTML = body.desc;
 document.querySelector('.circumference').innerText = body.circumference;
 document.querySelector('.distance').innerText = body.distance;
-document.querySelector('.distance').innerText = body.distance;
 document.querySelector('.temp-day').innerText = body.temp.day;
 document.querySelector('.temp-night').innerText = body.temp.night;
 document.querySelector('.orbital-period').innerText = body.orbitalPeriod;

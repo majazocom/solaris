@@ -11,7 +11,13 @@ main {
 
 main #body-svg {
     height: 100vh;
-    flex: 1;
+    margin-left: -1rem;
+    transition: 1s;
+}
+
+main #body-svg:hover {
+    transition: 1s;
+    transform: scaleY(1.2);
 }
 
 main .content {
@@ -25,6 +31,10 @@ main .content {
 main .content .main-info {
     display: flex;
     flex-direction: column;
+}
+
+main .content #body-description {
+    max-width: 50vw;
 }
 
 main .content .body-data {
