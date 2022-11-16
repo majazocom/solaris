@@ -1,6 +1,4 @@
-header h1 {
-    margin-block-end: 0;
-}
+
 
 main {
     display: flex;
@@ -17,7 +15,7 @@ main #body-svg {
 
 main #body-svg:hover {
     transition: 1s;
-    transform: scaleY(1.2);
+    transform: scaleX(1.2);
 }
 
 main .content {
