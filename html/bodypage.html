@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +9,85 @@
     <link href="../css/bodypage.css" rel="stylesheet" type="text/css">
     <title>SOLARIS</title>
 </head>
+
 <body>
     <header>
         <section class="header-section">
-            <h1>SOLARIS</h1>
+            <a href="./index.html">
+                <h1>SOLARIS</h1>
+            </a>
         </section>
     </header>
     <main>
-        <section class="inner-module">
-            <img id="body-img">
-            <h2 id="body-name"></h2>
-            <p id="body-description"></p>
+        <svg id="body-svg" width="368" height="900" viewBox="0 0 368 900" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_7_7)">
+                <path id="sun" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0 820.061C74.3038 715.639 118 587.922 118 450C118 312.078 74.3038 184.361 0 79.9392V820.061Z"
+                    fill="#FFD029" />
+            </g>
+            <defs>
+                <filter id="filter0_d_7_7" x="-250" y="-170.061" width="618" height="1240.12"
+                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                    <feOffset />
+                    <feGaussianBlur stdDeviation="125" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.815257 0 0 0 0 0.1625 0 0 0 0.2 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7_7" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7_7" result="shape" />
+                </filter>
+            </defs>
+        </svg>
+        <section class="content">
+            <article class="main-info">
+                <h2 id="body-name"></h2>
+                <h3 id="body-latin-name"></h3>
+                <p id="body-description"></p>
+            </article>
+            <section class="body-data">
+                <article class="circumference">
+                    <h4>Omkrets:</h4>
+                    <p></p>
+                </article>
+                <article class="distance">
+                    <h4>Distans från solen:</h4>
+                    <p></p>
+                </article>
+                <article class="temp-day">
+                    <h4>Temp. dag:</h4>
+                    <p></p>
+                </article>
+                <article class="temp-night">
+                    <h4>Temp. natt:</h4>
+                    <p></p>
+                </article>
+                <article class="orbital-period">
+                    <h4>Omloppsperiod:</h4>
+                    <p></p>
+                </article>
+                <article class="rotation">
+                    <h4>Rotationstid:</h4>
+                    <p></p>
+                </article>
+                <article class="moons">
+                    <h4>Månar:</h4>
+                    <p></p>
+                </article>
+            </section>
         </section>
-    ∑</main>
+
+    </main>
     <footer>
         <section>
-            <button id="previous-body"><</button>
-            <button id="next-body">></button>
+            <button id="previous-body">
+                < </button>
+                    <button id="next-body">></button>
         </section>
     </footer>
     <script src="../js/bodypage.js"></script>
 </body>
+
 </html>

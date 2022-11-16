@@ -3,6 +3,7 @@ const bodies = JSON.parse(localStorage.getItem('bodies'));
 console.log(body);
 
 document.querySelector('#body-name').innerHTML = body.name;
+document.querySelector('#body-latin-name').innerHTML = body.latinName;
 document.querySelector('#body-description').innerHTML = body.desc;
 document.querySelector('#previous-body').addEventListener('click', () => toggleBody('previous'));
 document.querySelector('#next-body').addEventListener('click', () => toggleBody('next'));
@@ -35,4 +36,33 @@ function toggleBody(direction) {
         localStorage.setItem('body', JSON.stringify(bodies[nextBodyID]));
         location.reload();
     }
+}
+
+// ändra färg på svg'n efter vilken planet man är på:
+const image = document.getElementById('sun');
+switch (body.name) {
+    case "Merkurius":
+        image.style.fill = '#888888';
+        break;
+    case "Venus":
+        image.style.fill = '#E7CDCD';
+        break;
+    case "Jorden":
+        image.style.fill = '#428ED4';
+        break;
+    case "Mars":
+        image.style.fill = '#EF5F5F';
+        break;
+    case "Jupiter":
+        image.style.fill = '#E29468';
+        break;
+    case "Saturnus":
+        image.style.fill = '#C7AA72';
+        break;
+    case "Uranus":
+        image.style.fill = '#C9D4F1';
+        break;
+    case "Neptunus":
+        image.style.fill = '#7A91A7';
+        break;
 }
