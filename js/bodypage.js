@@ -2,13 +2,21 @@ const body = JSON.parse(localStorage.getItem('body'));
 const bodies = JSON.parse(localStorage.getItem('bodies'));
 console.log(body);
 
+// släng in data i olika element i html'en
 document.querySelector('#body-name').innerHTML = body.name;
 document.querySelector('#body-latin-name').innerHTML = body.latinName;
 document.querySelector('#body-description').innerHTML = body.desc;
-document.querySelector('#previous-body').addEventListener('click', () => toggleBody('previous'));
-document.querySelector('#next-body').addEventListener('click', () => toggleBody('next'));
+document.querySelector('.circumference').innerText = body.circumference;
+document.querySelector('.distance').innerText = body.distance;
+document.querySelector('.distance').innerText = body.distance;
+document.querySelector('.temp-day').innerText = body.temp.day;
+document.querySelector('.temp-night').innerText = body.temp.night;
+document.querySelector('.orbital-period').innerText = body.orbitalPeriod;
+document.querySelector('.rotation').innerText = body.rotation;
 
 // funktionalitet för att gå mellan planeter på sidan
+document.querySelector('#previous-body').addEventListener('click', () => toggleBody('previous'));
+document.querySelector('#next-body').addEventListener('click', () => toggleBody('next'));
 function toggleBody(direction) {
     let currentBodyID = body.id;
     if (direction === 'previous') {

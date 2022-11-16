@@ -22,12 +22,19 @@ main .content {
     padding-right: 10vw;
 }
 
-main .content .main-info{
+main .content .main-info {
     display: flex;
     flex-direction: column;
 }
 
 main .content .body-data {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main .content .body-data h4 {
+    margin-block-end: 0;
+}
+main .content .body-data p {
+    margin-block-start: 0.2rem;
 }
