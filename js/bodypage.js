@@ -2,7 +2,7 @@ const body = JSON.parse(localStorage.getItem('body'));
 const bodies = JSON.parse(localStorage.getItem('bodies'));
 console.log(body);
 
-// släng in data i olika element i html'en
+// släng in data i tillhörande element i html'en
 document.querySelector('#body-name').innerHTML = body.name;
 document.querySelector('#body-latin-name').innerHTML = body.latinName;
 document.querySelector('#body-description').innerHTML = body.desc;

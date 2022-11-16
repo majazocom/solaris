@@ -41,6 +41,7 @@ async function renderPlanets() {
     });
 }
 
+// funktion för att byta sida och sätta rätt planet i localstorage
 function goToPlanet(body) {
     console.log(body);
     localStorage.setItem('body', JSON.stringify(body));
