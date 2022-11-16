@@ -6,12 +6,12 @@ console.log(body);
 document.querySelector('#body-name').innerHTML = body.name;
 document.querySelector('#body-latin-name').innerHTML = body.latinName;
 document.querySelector('#body-description').innerHTML = body.desc;
-document.querySelector('.circumference').innerText = body.circumference;
-document.querySelector('.distance').innerText = body.distance;
-document.querySelector('.temp-day').innerText = body.temp.day;
-document.querySelector('.temp-night').innerText = body.temp.night;
-document.querySelector('.orbital-period').innerText = body.orbitalPeriod;
-document.querySelector('.rotation').innerText = body.rotation;
+document.querySelector('.circumference').innerText = body.circumference + ' km';
+document.querySelector('.distance').innerText = body.distance + ' km';
+document.querySelector('.temp-day').innerText = body.temp.day + ' °C';
+document.querySelector('.temp-night').innerText = body.temp.night + ' °C';
+document.querySelector('.orbital-period').innerText = body.orbitalPeriod  + ' dagar';
+document.querySelector('.rotation').innerText = body.rotation + ' dagar';
 
 // funktionalitet för att gå mellan planeter på sidan
 document.querySelector('#previous-body').addEventListener('click', () => toggleBody('previous'));
