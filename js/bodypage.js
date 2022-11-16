@@ -1,6 +1,5 @@
 const body = JSON.parse(localStorage.getItem('body'));
 const bodies = JSON.parse(localStorage.getItem('bodies'));
-console.log(body);
 
 // släng in data i tillhörande element i html'en
 document.querySelector('#body-name').innerHTML = body.name;

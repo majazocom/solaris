@@ -9,7 +9,6 @@ async function fetchSolarSystem() {
         method: 'GET',
         headers: { 'x-zocom': 'solaris-7BTxHCyHhzIME5TI' }
     }).then(data => data.json());
-    console.log(await resp);
     return await resp.bodies;
 };
 
@@ -43,7 +42,6 @@ async function renderPlanets() {
 
 // funktion för att byta sida och sätta rätt planet i localstorage
 function goToPlanet(body) {
-    console.log(body);
     localStorage.setItem('body', JSON.stringify(body));
     location.href = "bodypage.html";
 }
